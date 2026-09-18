@@ -1,0 +1,1089 @@
+{
+  "per_repo": {
+    "diagnostics": {
+      "protocol": "per_repo",
+      "total_rows": 2591,
+      "train_rows": 2072,
+      "test_rows": 519,
+      "train_failures": 268,
+      "test_failures": 131,
+      "train_failure_rate": 0.12934362934362933,
+      "test_failure_rate": 0.2524084778420039,
+      "repos": {
+        "django/django": {
+          "total_rows": 119,
+          "train_rows": 95,
+          "train_failures": 27,
+          "train_failure_rate": 0.28421052631578947,
+          "test_rows": 24,
+          "test_failures": 3,
+          "test_failure_rate": 0.125,
+          "repo_train_share_pct": 79.83193277310924,
+          "test_set_share_pct": 4.624277456647398,
+          "min_timestamp": "2026-08-18 15:49:21",
+          "max_timestamp": "2026-09-17 11:10:45"
+        },
+        "expressjs/express": {
+          "total_rows": 458,
+          "train_rows": 366,
+          "train_failures": 18,
+          "train_failure_rate": 0.04918032786885246,
+          "test_rows": 92,
+          "test_failures": 41,
+          "test_failure_rate": 0.44565217391304346,
+          "repo_train_share_pct": 79.91266375545851,
+          "test_set_share_pct": 17.726396917148364,
+          "min_timestamp": "2025-08-01 09:44:40",
+          "max_timestamp": "2026-09-18 06:49:13"
+        },
+        "huggingface/transformers": {
+          "total_rows": 129,
+          "train_rows": 103,
+          "train_failures": 34,
+          "train_failure_rate": 0.3300970873786408,
+          "test_rows": 26,
+          "test_failures": 7,
+          "test_failure_rate": 0.2692307692307692,
+          "repo_train_share_pct": 79.84496124031007,
+          "test_set_share_pct": 5.009633911368015,
+          "min_timestamp": "2026-09-01 12:10:22",
+          "max_timestamp": "2026-09-18 11:02:23"
+        },
+        "pallets/flask": {
+          "total_rows": 361,
+          "train_rows": 289,
+          "train_failures": 112,
+          "train_failure_rate": 0.3875432525951557,
+          "test_rows": 72,
+          "test_failures": 32,
+          "test_failure_rate": 0.4444444444444444,
+          "repo_train_share_pct": 80.05540166204986,
+          "test_set_share_pct": 13.872832369942195,
+          "min_timestamp": "2025-07-31 18:46:58",
+          "max_timestamp": "2026-09-08 16:28:29"
+        },
+        "psf/requests": {
+          "total_rows": 514,
+          "train_rows": 411,
+          "train_failures": 6,
+          "train_failure_rate": 0.014598540145985401,
+          "test_rows": 103,
+          "test_failures": 2,
+          "test_failure_rate": 0.019417475728155338,
+          "repo_train_share_pct": 79.96108949416343,
+          "test_set_share_pct": 19.845857418111752,
+          "min_timestamp": "2025-08-05 09:01:20",
+          "max_timestamp": "2026-09-07 16:54:44"
+        },
+        "scikit-learn/scikit-learn": {
+          "total_rows": 286,
+          "train_rows": 229,
+          "train_failures": 18,
+          "train_failure_rate": 0.07860262008733625,
+          "test_rows": 57,
+          "test_failures": 7,
+          "test_failure_rate": 0.12280701754385964,
+          "repo_train_share_pct": 80.06993006993007,
+          "test_set_share_pct": 10.982658959537572,
+          "min_timestamp": "2026-08-28 14:36:37",
+          "max_timestamp": "2026-09-18 00:54:57"
+        },
+        "tiangolo/fastapi": {
+          "total_rows": 396,
+          "train_rows": 317,
+          "train_failures": 42,
+          "train_failure_rate": 0.13249211356466878,
+          "test_rows": 79,
+          "test_failures": 37,
+          "test_failure_rate": 0.46835443037974683,
+          "repo_train_share_pct": 80.05050505050505,
+          "test_set_share_pct": 15.221579961464354,
+          "min_timestamp": "2026-08-04 16:21:39",
+          "max_timestamp": "2026-09-14 19:02:59"
+        },
+        "vuejs/core": {
+          "total_rows": 328,
+          "train_rows": 262,
+          "train_failures": 11,
+          "train_failure_rate": 0.04198473282442748,
+          "test_rows": 66,
+          "test_failures": 2,
+          "test_failure_rate": 0.030303030303030304,
+          "repo_train_share_pct": 79.8780487804878,
+          "test_set_share_pct": 12.716763005780345,
+          "min_timestamp": "2026-05-08 09:28:58",
+          "max_timestamp": "2026-09-17 07:30:40"
+        }
+      },
+      "flags": []
+    },
+    "models": {
+      "dummy": {
+        "pr_auc": 0.2524084778420039,
+        "roc_auc": 0.5,
+        "pr_auc_ci_95": [
+          0.21579961464354527,
+          0.2909441233140655
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.09615384615384616,
+            "recall": 0.03816793893129771
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.2403846153846154,
+            "recall": 0.19083969465648856
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.2692307692307692,
+            "recall": 0.32061068702290074
+          }
+        },
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.44565217391304346
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.2692307692307692
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.4444444444444444
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.12280701754385964
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.46835443037974683
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        }
+      },
+      "repo_prior": {
+        "pr_auc": 0.3886908198797622,
+        "roc_auc": 0.7000964035570945,
+        "pr_auc_ci_95": [
+          0.3303775407491445,
+          0.45895714000575283
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.5576923076923077,
+            "recall": 0.22137404580152673
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.3942307692307692,
+            "recall": 0.31297709923664124
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.3717948717948718,
+            "recall": 0.44274809160305345
+          }
+        },
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.44565217391304346
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.2692307692307692
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.4444444444444444
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.12280701754385964
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.46835443037974683
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        }
+      },
+      "recent_rate_heuristic": {
+        "pr_auc": 0.5019647392247087,
+        "roc_auc": 0.7928799087117337,
+        "pr_auc_ci_95": [
+          0.42969586687905637,
+          0.5863588219095298
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.5769230769230769,
+            "recall": 0.22900763358778625
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.5480769230769231,
+            "recall": 0.4351145038167939
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.4807692307692308,
+            "recall": 0.5725190839694656
+          }
+        },
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.506491846344449
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.31025641025641026
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.5704227538917666
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.24058658551139753
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.4842851571724811
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        }
+      },
+      "decision_stump": {
+        "pr_auc": 0.4139555534647313,
+        "roc_auc": 0.7457306996143858,
+        "pr_auc_ci_95": [
+          0.35770299069955697,
+          0.4729729963556615
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.6538461538461539,
+            "recall": 0.2595419847328244
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.5096153846153846,
+            "recall": 0.40458015267175573
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.44871794871794873,
+            "recall": 0.5343511450381679
+          }
+        },
+        "threshold": 0.63,
+        "precision": 0.4396887159533074,
+        "recall": 0.8625954198473282,
+        "f1": 0.5824742268041238,
+        "confusion_matrix": [
+          [
+            244,
+            144
+          ],
+          [
+            18,
+            113
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.451888602736959
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.2692307692307692
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.4725068306010929
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.1693519513068385
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.46835443037974683
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        },
+        "oof_cv_diagnostics": [
+          {
+            "fold": 1,
+            "train_rows": 347,
+            "val_rows": 345,
+            "val_positives": 34,
+            "val_positive_pct": 9.855072463768117,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 2,
+            "train_rows": 692,
+            "val_rows": 345,
+            "val_positives": 33,
+            "val_positive_pct": 9.565217391304348,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 3,
+            "train_rows": 1037,
+            "val_rows": 345,
+            "val_positives": 51,
+            "val_positive_pct": 14.782608695652174,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 4,
+            "train_rows": 1382,
+            "val_rows": 345,
+            "val_positives": 59,
+            "val_positive_pct": 17.101449275362317,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 5,
+            "train_rows": 1727,
+            "val_rows": 345,
+            "val_positives": 52,
+            "val_positive_pct": 15.072463768115943,
+            "flagged_low_positives": false
+          }
+        ],
+        "chosen_split": {
+          "feature_index": 9,
+          "feature_name": "repo_recent_failure_rate",
+          "threshold": 0.19375000149011612
+        }
+      },
+      "logistic_regression": {
+        "pr_auc": 0.6591212945523361,
+        "roc_auc": 0.8646612103564963,
+        "pr_auc_ci_95": [
+          0.578934935450702,
+          0.759716634088933
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.8461538461538461,
+            "recall": 0.33587786259541985
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.7115384615384616,
+            "recall": 0.5648854961832062
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.5897435897435898,
+            "recall": 0.7022900763358778
+          }
+        },
+        "threshold": 0.62,
+        "precision": 0.553763440860215,
+        "recall": 0.7862595419847328,
+        "f1": 0.6498422712933754,
+        "confusion_matrix": [
+          [
+            305,
+            83
+          ],
+          [
+            28,
+            103
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.8711604295927868
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.3546401838327304
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.5419920340272365
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.8234126984126984
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.7903278555407771
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        },
+        "oof_cv_diagnostics": [
+          {
+            "fold": 1,
+            "train_rows": 347,
+            "val_rows": 345,
+            "val_positives": 34,
+            "val_positive_pct": 9.855072463768117,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 2,
+            "train_rows": 692,
+            "val_rows": 345,
+            "val_positives": 33,
+            "val_positive_pct": 9.565217391304348,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 3,
+            "train_rows": 1037,
+            "val_rows": 345,
+            "val_positives": 51,
+            "val_positive_pct": 14.782608695652174,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 4,
+            "train_rows": 1382,
+            "val_rows": 345,
+            "val_positives": 59,
+            "val_positive_pct": 17.101449275362317,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 5,
+            "train_rows": 1727,
+            "val_rows": 345,
+            "val_positives": 52,
+            "val_positive_pct": 15.072463768115943,
+            "flagged_low_positives": false
+          }
+        ]
+      }
+    },
+    "paired_bootstrap": {
+      "lr_minus_repo_prior": {
+        "mean_difference": 0.2766740474336771,
+        "ci_lower": 0.2057076350245593,
+        "ci_upper": 0.3643252908033943,
+        "win_fraction": 1.0,
+        "skipped": 0
+      },
+      "lr_minus_recent_rate": {
+        "mean_difference": 0.15831681748663312,
+        "ci_lower": 0.08846584885071936,
+        "ci_upper": 0.2354927936182512,
+        "win_fraction": 1.0,
+        "skipped": 0
+      },
+      "stump_minus_repo_prior": {
+        "mean_difference": 0.024393219543456187,
+        "ci_lower": -0.02697835364437632,
+        "ci_upper": 0.06732649412614133,
+        "win_fraction": 0.837,
+        "skipped": 0
+      }
+    }
+  },
+  "global": {
+    "diagnostics": {
+      "protocol": "global",
+      "total_rows": 2591,
+      "train_rows": 2072,
+      "test_rows": 519,
+      "train_failures": 321,
+      "test_failures": 78,
+      "train_failure_rate": 0.15492277992277992,
+      "test_failure_rate": 0.15028901734104047,
+      "repos": {
+        "django/django": {
+          "total_rows": 119,
+          "train_rows": 80,
+          "train_failures": 27,
+          "train_failure_rate": 0.3375,
+          "test_rows": 39,
+          "test_failures": 3,
+          "test_failure_rate": 0.07692307692307693,
+          "repo_train_share_pct": 67.22689075630252,
+          "test_set_share_pct": 7.514450867052023,
+          "min_timestamp": "2026-08-18 15:49:21",
+          "max_timestamp": "2026-09-17 11:10:45"
+        },
+        "expressjs/express": {
+          "total_rows": 458,
+          "train_rows": 448,
+          "train_failures": 54,
+          "train_failure_rate": 0.12053571428571429,
+          "test_rows": 10,
+          "test_failures": 5,
+          "test_failure_rate": 0.5,
+          "repo_train_share_pct": 97.81659388646288,
+          "test_set_share_pct": 1.9267822736030826,
+          "min_timestamp": "2025-08-01 09:44:40",
+          "max_timestamp": "2026-09-18 06:49:13"
+        },
+        "huggingface/transformers": {
+          "total_rows": 129,
+          "train_rows": 22,
+          "train_failures": 3,
+          "train_failure_rate": 0.13636363636363635,
+          "test_rows": 107,
+          "test_failures": 38,
+          "test_failure_rate": 0.35514018691588783,
+          "repo_train_share_pct": 17.05426356589147,
+          "test_set_share_pct": 20.616570327552985,
+          "min_timestamp": "2026-09-01 12:10:22",
+          "max_timestamp": "2026-09-18 11:02:23"
+        },
+        "pallets/flask": {
+          "total_rows": 361,
+          "train_rows": 361,
+          "train_failures": 144,
+          "train_failure_rate": 0.3988919667590028,
+          "test_rows": 0,
+          "test_failures": 0,
+          "test_failure_rate": 0.0,
+          "repo_train_share_pct": 100.0,
+          "test_set_share_pct": 0.0,
+          "min_timestamp": "2025-07-31 18:46:58",
+          "max_timestamp": "2026-09-08 16:28:29"
+        },
+        "psf/requests": {
+          "total_rows": 514,
+          "train_rows": 514,
+          "train_failures": 8,
+          "train_failure_rate": 0.01556420233463035,
+          "test_rows": 0,
+          "test_failures": 0,
+          "test_failure_rate": 0.0,
+          "repo_train_share_pct": 100.0,
+          "test_set_share_pct": 0.0,
+          "min_timestamp": "2025-08-05 09:01:20",
+          "max_timestamp": "2026-09-07 16:54:44"
+        },
+        "scikit-learn/scikit-learn": {
+          "total_rows": 286,
+          "train_rows": 49,
+          "train_failures": 4,
+          "train_failure_rate": 0.08163265306122448,
+          "test_rows": 237,
+          "test_failures": 21,
+          "test_failure_rate": 0.08860759493670886,
+          "repo_train_share_pct": 17.132867132867133,
+          "test_set_share_pct": 45.664739884393065,
+          "min_timestamp": "2026-08-28 14:36:37",
+          "max_timestamp": "2026-09-18 00:54:57"
+        },
+        "tiangolo/fastapi": {
+          "total_rows": 396,
+          "train_rows": 377,
+          "train_failures": 75,
+          "train_failure_rate": 0.1989389920424403,
+          "test_rows": 19,
+          "test_failures": 4,
+          "test_failure_rate": 0.21052631578947367,
+          "repo_train_share_pct": 95.2020202020202,
+          "test_set_share_pct": 3.6608863198458574,
+          "min_timestamp": "2026-08-04 16:21:39",
+          "max_timestamp": "2026-09-14 19:02:59"
+        },
+        "vuejs/core": {
+          "total_rows": 328,
+          "train_rows": 221,
+          "train_failures": 6,
+          "train_failure_rate": 0.027149321266968326,
+          "test_rows": 107,
+          "test_failures": 7,
+          "test_failure_rate": 0.06542056074766354,
+          "repo_train_share_pct": 67.3780487804878,
+          "test_set_share_pct": 20.616570327552985,
+          "min_timestamp": "2026-05-08 09:28:58",
+          "max_timestamp": "2026-09-17 07:30:40"
+        }
+      },
+      "flags": [
+        "FLAG: Repo 'huggingface/transformers' has <20% (17.1%) of its rows in train set in global split.",
+        "FLAG: Repo 'pallets/flask' has 0 test rows in global split.",
+        "FLAG: Repo 'psf/requests' has 0 test rows in global split.",
+        "FLAG: Repo 'scikit-learn/scikit-learn' has <20% (17.1%) of its rows in train set in global split."
+      ]
+    },
+    "models": {
+      "dummy": {
+        "pr_auc": 0.15028901734104047,
+        "roc_auc": 0.5,
+        "pr_auc_ci_95": [
+          0.12133911368015414,
+          0.18304431599229287
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.038461538461538464,
+            "recall": 0.02564102564102564
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.08653846153846154,
+            "recall": 0.11538461538461539
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.08974358974358974,
+            "recall": 0.1794871794871795
+          }
+        },
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.5
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.35514018691588783
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.08860759493670886
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.06542056074766354
+          }
+        }
+      },
+      "repo_prior": {
+        "pr_auc": 0.22021398466524247,
+        "roc_auc": 0.659297052154195,
+        "pr_auc_ci_95": [
+          0.16936012402124073,
+          0.2804812478303168
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.1346153846153846,
+            "recall": 0.08974358974358974
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.27884615384615385,
+            "recall": 0.3717948717948718
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.2692307692307692,
+            "recall": 0.5384615384615384
+          }
+        },
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.5
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.35514018691588783
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.08860759493670886
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.06542056074766354
+          }
+        }
+      },
+      "recent_rate_heuristic": {
+        "pr_auc": 0.2657461749451316,
+        "roc_auc": 0.7075266003837433,
+        "pr_auc_ci_95": [
+          0.20156594909765513,
+          0.3460782650395903
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.38461538461538464,
+            "recall": 0.2564102564102564
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.2980769230769231,
+            "recall": 0.3974358974358974
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.28846153846153844,
+            "recall": 0.5769230769230769
+          }
+        },
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.8333333333333333
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.34677435541019114
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.12335463470949418
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.07656032767845355
+          }
+        }
+      },
+      "decision_stump": {
+        "pr_auc": 0.23454823085523152,
+        "roc_auc": 0.6708965637537065,
+        "pr_auc_ci_95": [
+          0.1773046706504905,
+          0.2963531189597886
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.1346153846153846,
+            "recall": 0.08974358974358974
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.27884615384615385,
+            "recall": 0.3717948717948718
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.2948717948717949,
+            "recall": 0.5897435897435898
+          }
+        },
+        "threshold": 0.63,
+        "precision": 0.29012345679012347,
+        "recall": 0.6025641025641025,
+        "f1": 0.39166666666666666,
+        "confusion_matrix": [
+          [
+            326,
+            115
+          ],
+          [
+            31,
+            47
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.6333333333333333
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.3687277892305057
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.10719308820574643
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.06401127429164813
+          }
+        },
+        "oof_cv_diagnostics": [
+          {
+            "fold": 1,
+            "train_rows": 347,
+            "val_rows": 345,
+            "val_positives": 34,
+            "val_positive_pct": 9.855072463768117,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 2,
+            "train_rows": 692,
+            "val_rows": 345,
+            "val_positives": 28,
+            "val_positive_pct": 8.115942028985506,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 3,
+            "train_rows": 1037,
+            "val_rows": 345,
+            "val_positives": 82,
+            "val_positive_pct": 23.768115942028984,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 4,
+            "train_rows": 1382,
+            "val_rows": 345,
+            "val_positives": 54,
+            "val_positive_pct": 15.65217391304348,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 5,
+            "train_rows": 1727,
+            "val_rows": 345,
+            "val_positives": 84,
+            "val_positive_pct": 24.347826086956523,
+            "flagged_low_positives": false
+          }
+        ],
+        "chosen_split": {
+          "feature_index": 9,
+          "feature_name": "repo_recent_failure_rate",
+          "threshold": 0.19375000149011612
+        }
+      },
+      "logistic_regression": {
+        "pr_auc": 0.48783081190335753,
+        "roc_auc": 0.7896098610384324,
+        "pr_auc_ci_95": [
+          0.3791145395640053,
+          0.5979626133053247
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.5576923076923077,
+            "recall": 0.3717948717948718
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.40384615384615385,
+            "recall": 0.5384615384615384
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.34615384615384615,
+            "recall": 0.6923076923076923
+          }
+        },
+        "threshold": 0.57,
+        "precision": 0.422680412371134,
+        "recall": 0.5256410256410257,
+        "f1": 0.4685714285714286,
+        "confusion_matrix": [
+          [
+            385,
+            56
+          ],
+          [
+            37,
+            41
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.9028571428571428
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.5499492025651943
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.41250108826320464
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.3617928440192614
+          }
+        },
+        "oof_cv_diagnostics": [
+          {
+            "fold": 1,
+            "train_rows": 347,
+            "val_rows": 345,
+            "val_positives": 34,
+            "val_positive_pct": 9.855072463768117,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 2,
+            "train_rows": 692,
+            "val_rows": 345,
+            "val_positives": 28,
+            "val_positive_pct": 8.115942028985506,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 3,
+            "train_rows": 1037,
+            "val_rows": 345,
+            "val_positives": 82,
+            "val_positive_pct": 23.768115942028984,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 4,
+            "train_rows": 1382,
+            "val_rows": 345,
+            "val_positives": 54,
+            "val_positive_pct": 15.65217391304348,
+            "flagged_low_positives": false
+          },
+          {
+            "fold": 5,
+            "train_rows": 1727,
+            "val_rows": 345,
+            "val_positives": 84,
+            "val_positive_pct": 24.347826086956523,
+            "flagged_low_positives": false
+          }
+        ]
+      }
+    },
+    "paired_bootstrap": {
+      "lr_minus_repo_prior": {
+        "mean_difference": 0.2695877433384131,
+        "ci_lower": 0.17056031123168974,
+        "ci_upper": 0.36863841531421027,
+        "win_fraction": 1.0,
+        "skipped": 0
+      },
+      "lr_minus_recent_rate": {
+        "mean_difference": 0.22141593986746533,
+        "ci_lower": 0.12714851223396265,
+        "ci_upper": 0.3168546629786466,
+        "win_fraction": 1.0,
+        "skipped": 0
+      },
+      "stump_minus_repo_prior": {
+        "mean_difference": 0.011797581340906442,
+        "ci_lower": -0.024922005623979636,
+        "ci_upper": 0.047387354688436016,
+        "win_fraction": 0.743,
+        "skipped": 0
+      }
+    }
+  }
+}

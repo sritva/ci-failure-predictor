@@ -1,0 +1,106 @@
+name: CI Failure Risk Assessment
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  assess-risk:
+    name: Predict Failure Risk
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set Up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # NOTE ON ARCHITECTURE:
+      # Starting uvicorn directly inside the GitHub Actions job is a self-contained
+      # demonstration pattern ideal for local/CI testing without external infrastructure.
+      # In a production environment, this step would be omitted, and score_pr.py would
+      # target a persistently hosted, authenticated inference microservice endpoint
+      # (e.g. via --api-url https://ci-predictor.internal.domain).
+      - name: Start Inference Service (Demo Pattern)
+        run: |
+          python -m uvicorn src.service.main:app --host 127.0.0.1 --port 8000 &
+          echo "Waiting for FastAPI service to become healthy..."
+          python -c "
+          import time, urllib.request
+          start_time = time.time()
+          timeout = 30
+          while time.time() - start_time < timeout:
+              try:
+                  with urllib.request.urlopen('http://127.0.0.1:8000/health', timeout=2) as resp:
+                      if resp.status == 200:
+                          print('FastAPI service is healthy and ready!')
+                          exit(0)
+              except Exception:
+                  time.sleep(1)
+          print('Service failed to start within 30s timeout')
+          exit(1)
+          "
+
+      - name: Compute Features and Score Pull Request
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python -m src.service.score_pr \
+            --owner "${{ github.repository_owner }}" \
+            --repo "${{ github.event.repository.name }}" \
+            --pr "${{ github.event.pull_request.number }}" \
+            --api-url "http://127.0.0.1:8000" \
+            --output-file "risk_comment.md"
+
+      - name: Post or Update Sticky PR Comment
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const fs = require('fs');
+            const commentBody = fs.readFileSync('risk_comment.md', 'utf8');
+            const marker = '<!-- ci-failure-predictor-comment -->';
+            const issue_number = context.issue.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            // Fetch existing comments on this pull request
+            const comments = await github.paginate(github.rest.issues.listComments, {
+              owner: owner,
+              repo: repo,
+              issue_number: issue_number,
+              per_page: 100,
+            });
+
+            const existingComment = comments.find(c => c.body && c.body.includes(marker));
+
+            if (existingComment) {
+              console.log(`Updating existing risk comment (ID: ${existingComment.id})`);
+              await github.rest.issues.updateComment({
+                owner: owner,
+                repo: repo,
+                comment_id: existingComment.id,
+                body: commentBody,
+              });
+            } else {
+              console.log(`Creating new risk assessment comment on PR #${issue_number}`);
+              await github.rest.issues.createComment({
+                owner: owner,
+                repo: repo,
+                issue_number: issue_number,
+                body: commentBody,
+              });
+            }

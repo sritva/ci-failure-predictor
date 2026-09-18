@@ -1,0 +1,27 @@
+{
+  "model_version": "1.0.0-xgb",
+  "feature_names": [
+    "diff_size",
+    "files_changed",
+    "test_files_changed",
+    "touches_test_files",
+    "time_of_day",
+    "day_of_week",
+    "is_weekend",
+    "author_past_run_count",
+    "author_past_failure_rate",
+    "repo_recent_failure_rate"
+  ],
+  "operating_threshold": 0.73,
+  "best_hyperparameters": {
+    "max_depth": 6,
+    "learning_rate": 0.0332,
+    "n_estimators": 100,
+    "subsample": 0.6,
+    "colsample_bytree": 0.8,
+    "min_child_weight": 9
+  },
+  "cv_pr_auc": 0.5413745028450512,
+  "test_pr_auc_per_repo": 0.7043522359184402,
+  "test_roc_auc_per_repo": 0.8439246084835131
+}

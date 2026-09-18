@@ -439,5 +439,45 @@ class TestRunCollection:
         assert "failure: 1 (50.0%)" in captured
         assert "success: 1 (50.0%)" in captured
 
+    @patch("src.collect.run_collection.fetch_pr_metadata")
+    @patch("src.collect.run_collection.link_runs_to_prs")
+    @patch("src.collect.run_collection.fetch_all_prs")
+    @patch("src.collect.run_collection.fetch_workflow_runs")
+    def test_run_collection_fault_isolation_continues_on_error(
+        self,
+        mock_fetch_runs,
+        mock_fetch_all_prs,
+        mock_link_runs,
+        mock_fetch_pr_metadata,
+        monkeypatch,
+        capsys,
+    ):
+        """Test that if one repo raises an error, it is logged and the loop continues to subsequent repos."""
+        from src.collect.run_collection import run_collection
+
+        monkeypatch.setenv("TARGET_REPOS", "bad/repo,good/repo")
+
+        def side_effect_fetch_runs(*args, **kwargs):
+            if kwargs.get("owner") == "bad" or (len(args) > 1 and args[1] == "bad"):
+                raise RuntimeError("API timeout on bad repo")
+            return [{"id": 1, "head_sha": "good_sha", "conclusion": "success"}]
+
+        mock_fetch_runs.side_effect = side_effect_fetch_runs
+        mock_fetch_all_prs.return_value = [{"number": 1, "head_sha": "good_sha"}]
+        mock_link_runs.return_value = ([({"id": 1, "head_sha": "good_sha", "conclusion": "success"}, 1)], 0)
+        mock_fetch_pr_metadata.return_value = {"1": {"number": 1, "filenames": []}}
+
+        # Should not raise exception
+        run_collection(force=False, max_runs=10)
+
+        captured = capsys.readouterr().out
+        assert "[ERROR] Failed to collect data for bad/repo: API timeout on bad repo" in captured
+        assert "Skipping bad/repo and continuing to next repository" in captured
+        assert "Repository: good/repo" in captured
+        assert "Total Workflow Runs Fetched: 1" in captured
+        assert "Failed Repositories (skipped):" in captured
+        assert "bad/repo: API timeout on bad repo" in captured
+
+
 
 

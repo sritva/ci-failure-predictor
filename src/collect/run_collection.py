@@ -58,6 +58,8 @@ def run_collection(force: bool = False, max_runs: int = 2000) -> None:
     print(f"Force re-fetch: {force}")
     print(f"Max runs per repo: {max_runs}\n")
 
+    failed_repos = []
+
     for repo_full in repo_list:
         if "/" not in repo_full:
             print(f"Skipping invalid repository identifier: '{repo_full}'. Expected 'owner/repo'.")
@@ -66,62 +68,73 @@ def run_collection(force: bool = False, max_runs: int = 2000) -> None:
         owner, repo = repo_full.split("/", 1)
         print(f"\n--- Processing {owner}/{repo} ---")
 
-        # 1. Fetch pull_request-event runs
-        runs = fetch_workflow_runs(
-            client=client,
-            owner=owner,
-            repo=repo,
-            max_runs=max_runs,
-            event="pull_request",
-            force=force,
-        )
+        try:
+            # 1. Fetch pull_request-event runs
+            runs = fetch_workflow_runs(
+                client=client,
+                owner=owner,
+                repo=repo,
+                max_runs=max_runs,
+                event="pull_request",
+                force=force,
+            )
 
-        # 2. Fetch all PRs
-        prs = fetch_all_prs(
-            client=client,
-            owner=owner,
-            repo=repo,
-            max_prs=max_runs,
-            force=force,
-        )
+            # 2. Fetch all PRs
+            prs = fetch_all_prs(
+                client=client,
+                owner=owner,
+                repo=repo,
+                max_prs=max_runs,
+                force=force,
+            )
 
-        # 3. Link runs to PRs via head_sha
-        matched_pairs, unmatched_count = link_runs_to_prs(runs=runs, prs=prs)
-        matched_runs = [run for run, _ in matched_pairs]
-        matched_pr_numbers = sorted(list({pr_num for _, pr_num in matched_pairs}))
+            # 3. Link runs to PRs via head_sha
+            matched_pairs, unmatched_count = link_runs_to_prs(runs=runs, prs=prs)
+            matched_runs = [run for run, _ in matched_pairs]
+            matched_pr_numbers = sorted(list({pr_num for _, pr_num in matched_pairs}))
 
-        # 4. Fetch file-change data only for matched PR numbers
-        pr_metadata = fetch_pr_metadata(
-            client=client,
-            owner=owner,
-            repo=repo,
-            pr_numbers=matched_pr_numbers,
-            force=force,
-        )
+            # 4. Fetch file-change data only for matched PR numbers
+            pr_metadata = fetch_pr_metadata(
+                client=client,
+                owner=owner,
+                repo=repo,
+                pr_numbers=matched_pr_numbers,
+                force=force,
+            )
 
-        # 5. Class balance inspection among MATCHED runs only
-        conclusions = [run.get("conclusion") for run in matched_runs]
-        conclusion_counts = Counter(conclusions)
+            # 5. Class balance inspection among MATCHED runs only
+            conclusions = [run.get("conclusion") for run in matched_runs]
+            conclusion_counts = Counter(conclusions)
 
-        total_repo_runs = len(runs)
-        total_matched = len(matched_pairs)
+            total_repo_runs = len(runs)
+            total_matched = len(matched_pairs)
 
-        overall_runs += total_repo_runs
-        overall_matched_runs += total_matched
-        overall_unmatched_runs += unmatched_count
-        overall_unique_prs += len(matched_pr_numbers)
+            overall_runs += total_repo_runs
+            overall_matched_runs += total_matched
+            overall_unmatched_runs += unmatched_count
+            overall_unique_prs += len(matched_pr_numbers)
 
-        repo_summaries.append({
-            "repo": repo_full,
-            "total_runs": total_repo_runs,
-            "matched_runs": total_matched,
-            "unmatched_runs": unmatched_count,
-            "matched_prs_count": len(matched_pr_numbers),
-            "conclusions": conclusion_counts,
-        })
+            repo_summaries.append({
+                "repo": repo_full,
+                "total_runs": total_repo_runs,
+                "matched_runs": total_matched,
+                "unmatched_runs": unmatched_count,
+                "matched_prs_count": len(matched_pr_numbers),
+                "conclusions": conclusion_counts,
+            })
+        except Exception as exc:
+            print(f"\n[ERROR] Failed to collect data for {repo_full}: {exc}")
+            print(f"[run_collection] Skipping {repo_full} and continuing to next repository...\n")
+            failed_repos.append((repo_full, str(exc)))
+            continue
 
     # Print summary report
     print("\n=================== COLLECTION SUMMARY REPORT ===================")
+    if failed_repos:
+        print("\nFailed Repositories (skipped):")
+        for r_name, err in failed_repos:
+            print(f"  • {r_name}: {err}")
+
     for summary in repo_summaries:
         repo_name = summary["repo"]
         total_runs = summary["total_runs"]

@@ -4,3 +4,11 @@ tqdm
 pytest
 pandas
 pyarrow
+scikit-learn
+xgboost
+joblib
+matplotlib
+fastapi
+uvicorn
+pydantic
+shap

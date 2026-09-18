@@ -1,0 +1,673 @@
+{
+  "per_repo": {
+    "diagnostics": {
+      "protocol": "per_repo",
+      "total_rows": 2591,
+      "train_rows": 2072,
+      "test_rows": 519,
+      "train_failures": 268,
+      "test_failures": 131,
+      "train_failure_rate": 0.12934362934362933,
+      "test_failure_rate": 0.2524084778420039,
+      "repos": {
+        "django/django": {
+          "total_rows": 119,
+          "train_rows": 95,
+          "train_failures": 27,
+          "train_failure_rate": 0.28421052631578947,
+          "test_rows": 24,
+          "test_failures": 3,
+          "test_failure_rate": 0.125,
+          "repo_train_share_pct": 79.83193277310924,
+          "test_set_share_pct": 4.624277456647398,
+          "min_timestamp": "2026-08-18 15:49:21",
+          "max_timestamp": "2026-09-17 11:10:45"
+        },
+        "expressjs/express": {
+          "total_rows": 458,
+          "train_rows": 366,
+          "train_failures": 18,
+          "train_failure_rate": 0.04918032786885246,
+          "test_rows": 92,
+          "test_failures": 41,
+          "test_failure_rate": 0.44565217391304346,
+          "repo_train_share_pct": 79.91266375545851,
+          "test_set_share_pct": 17.726396917148364,
+          "min_timestamp": "2025-08-01 09:44:40",
+          "max_timestamp": "2026-09-18 06:49:13"
+        },
+        "huggingface/transformers": {
+          "total_rows": 129,
+          "train_rows": 103,
+          "train_failures": 34,
+          "train_failure_rate": 0.3300970873786408,
+          "test_rows": 26,
+          "test_failures": 7,
+          "test_failure_rate": 0.2692307692307692,
+          "repo_train_share_pct": 79.84496124031007,
+          "test_set_share_pct": 5.009633911368015,
+          "min_timestamp": "2026-09-01 12:10:22",
+          "max_timestamp": "2026-09-18 11:02:23"
+        },
+        "pallets/flask": {
+          "total_rows": 361,
+          "train_rows": 289,
+          "train_failures": 112,
+          "train_failure_rate": 0.3875432525951557,
+          "test_rows": 72,
+          "test_failures": 32,
+          "test_failure_rate": 0.4444444444444444,
+          "repo_train_share_pct": 80.05540166204986,
+          "test_set_share_pct": 13.872832369942195,
+          "min_timestamp": "2025-07-31 18:46:58",
+          "max_timestamp": "2026-09-08 16:28:29"
+        },
+        "psf/requests": {
+          "total_rows": 514,
+          "train_rows": 411,
+          "train_failures": 6,
+          "train_failure_rate": 0.014598540145985401,
+          "test_rows": 103,
+          "test_failures": 2,
+          "test_failure_rate": 0.019417475728155338,
+          "repo_train_share_pct": 79.96108949416343,
+          "test_set_share_pct": 19.845857418111752,
+          "min_timestamp": "2025-08-05 09:01:20",
+          "max_timestamp": "2026-09-07 16:54:44"
+        },
+        "scikit-learn/scikit-learn": {
+          "total_rows": 286,
+          "train_rows": 229,
+          "train_failures": 18,
+          "train_failure_rate": 0.07860262008733625,
+          "test_rows": 57,
+          "test_failures": 7,
+          "test_failure_rate": 0.12280701754385964,
+          "repo_train_share_pct": 80.06993006993007,
+          "test_set_share_pct": 10.982658959537572,
+          "min_timestamp": "2026-08-28 14:36:37",
+          "max_timestamp": "2026-09-18 00:54:57"
+        },
+        "tiangolo/fastapi": {
+          "total_rows": 396,
+          "train_rows": 317,
+          "train_failures": 42,
+          "train_failure_rate": 0.13249211356466878,
+          "test_rows": 79,
+          "test_failures": 37,
+          "test_failure_rate": 0.46835443037974683,
+          "repo_train_share_pct": 80.05050505050505,
+          "test_set_share_pct": 15.221579961464354,
+          "min_timestamp": "2026-08-04 16:21:39",
+          "max_timestamp": "2026-09-14 19:02:59"
+        },
+        "vuejs/core": {
+          "total_rows": 328,
+          "train_rows": 262,
+          "train_failures": 11,
+          "train_failure_rate": 0.04198473282442748,
+          "test_rows": 66,
+          "test_failures": 2,
+          "test_failure_rate": 0.030303030303030304,
+          "repo_train_share_pct": 79.8780487804878,
+          "test_set_share_pct": 12.716763005780345,
+          "min_timestamp": "2026-05-08 09:28:58",
+          "max_timestamp": "2026-09-17 07:30:40"
+        }
+      },
+      "flags": []
+    },
+    "xgboost": {
+      "best_hyperparameters": {
+        "max_depth": 6,
+        "learning_rate": 0.0332,
+        "n_estimators": 100,
+        "subsample": 0.6,
+        "colsample_bytree": 0.8,
+        "min_child_weight": 9
+      },
+      "cv_pr_auc": 0.5413745028450512,
+      "chosen_threshold": 0.73,
+      "oof_f1": 0.5467289719626168,
+      "metrics": {
+        "pr_auc": 0.7043522359184402,
+        "roc_auc": 0.8439246084835131,
+        "pr_auc_ci_95": [
+          0.6250627663839853,
+          0.7744659020567017
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.9038461538461539,
+            "recall": 0.35877862595419846
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.6923076923076923,
+            "recall": 0.549618320610687
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.5192307692307693,
+            "recall": 0.6183206106870229
+          }
+        },
+        "threshold": 0.73,
+        "precision": 0.693069306930693,
+        "recall": 0.5343511450381679,
+        "f1": 0.603448275862069,
+        "confusion_matrix": [
+          [
+            357,
+            31
+          ],
+          [
+            61,
+            70
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.7696155023319923
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.4940051594186932
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.6056902153208523
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.8063725490196079
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.7984921519841799
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        }
+      },
+      "feature_importances": [
+        {
+          "feature": "repo_recent_failure_rate",
+          "gain": 31.345746994018555
+        },
+        {
+          "feature": "author_past_failure_rate",
+          "gain": 27.07650375366211
+        },
+        {
+          "feature": "author_past_run_count",
+          "gain": 12.296649932861328
+        },
+        {
+          "feature": "files_changed",
+          "gain": 11.963866233825684
+        },
+        {
+          "feature": "diff_size",
+          "gain": 11.53983211517334
+        },
+        {
+          "feature": "test_files_changed",
+          "gain": 9.423747062683105
+        },
+        {
+          "feature": "day_of_week",
+          "gain": 8.051336288452148
+        },
+        {
+          "feature": "time_of_day",
+          "gain": 7.625537395477295
+        },
+        {
+          "feature": "is_weekend",
+          "gain": 5.690905570983887
+        },
+        {
+          "feature": "touches_test_files",
+          "gain": 1.9813668727874756
+        }
+      ]
+    },
+    "logistic_regression": {
+      "chosen_threshold": 0.62,
+      "oof_f1": 0.5714285714285714,
+      "metrics": {
+        "pr_auc": 0.6591212945523361,
+        "roc_auc": 0.8646612103564963,
+        "pr_auc_ci_95": [
+          0.578934935450702,
+          0.759716634088933
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.8461538461538461,
+            "recall": 0.33587786259541985
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.7115384615384616,
+            "recall": 0.5648854961832062
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.5897435897435898,
+            "recall": 0.7022900763358778
+          }
+        },
+        "threshold": 0.62,
+        "precision": 0.553763440860215,
+        "recall": 0.7862595419847328,
+        "f1": 0.6498422712933754,
+        "confusion_matrix": [
+          [
+            305,
+            83
+          ],
+          [
+            28,
+            103
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 41,
+            "pr_auc": 0.8711604295927868
+          },
+          "huggingface/transformers": {
+            "test_failures": 7,
+            "pr_auc": 0.3546401838327304
+          },
+          "pallets/flask": {
+            "test_failures": 32,
+            "pr_auc": 0.5419920340272365
+          },
+          "psf/requests": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 7,
+            "pr_auc": 0.8234126984126984
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 37,
+            "pr_auc": 0.7903278555407771
+          },
+          "vuejs/core": {
+            "test_failures": 2,
+            "pr_auc": "insufficient failures"
+          }
+        }
+      }
+    },
+    "paired_bootstrap_vs_lr": {
+      "mean_difference": 0.03788403125774011,
+      "ci_lower": -0.02227987706095149,
+      "ci_upper": 0.09762748192107416,
+      "win_fraction": 0.883,
+      "skipped": 0
+    },
+    "paired_bootstrap_vs_repo_prior": {
+      "mean_difference": 0.3145580786914172,
+      "ci_lower": 0.23648752758420932,
+      "ci_upper": 0.39065420990375455,
+      "win_fraction": 1.0,
+      "skipped": 0
+    },
+    "paired_bootstrap_vs_recent_rate": {
+      "mean_difference": 0.1962008487443732,
+      "ci_lower": 0.12107921584483043,
+      "ci_upper": 0.27943096428427494,
+      "win_fraction": 1.0,
+      "skipped": 0
+    }
+  },
+  "global": {
+    "diagnostics": {
+      "protocol": "global",
+      "total_rows": 2591,
+      "train_rows": 2072,
+      "test_rows": 519,
+      "train_failures": 321,
+      "test_failures": 78,
+      "train_failure_rate": 0.15492277992277992,
+      "test_failure_rate": 0.15028901734104047,
+      "repos": {
+        "django/django": {
+          "total_rows": 119,
+          "train_rows": 80,
+          "train_failures": 27,
+          "train_failure_rate": 0.3375,
+          "test_rows": 39,
+          "test_failures": 3,
+          "test_failure_rate": 0.07692307692307693,
+          "repo_train_share_pct": 67.22689075630252,
+          "test_set_share_pct": 7.514450867052023,
+          "min_timestamp": "2026-08-18 15:49:21",
+          "max_timestamp": "2026-09-17 11:10:45"
+        },
+        "expressjs/express": {
+          "total_rows": 458,
+          "train_rows": 448,
+          "train_failures": 54,
+          "train_failure_rate": 0.12053571428571429,
+          "test_rows": 10,
+          "test_failures": 5,
+          "test_failure_rate": 0.5,
+          "repo_train_share_pct": 97.81659388646288,
+          "test_set_share_pct": 1.9267822736030826,
+          "min_timestamp": "2025-08-01 09:44:40",
+          "max_timestamp": "2026-09-18 06:49:13"
+        },
+        "huggingface/transformers": {
+          "total_rows": 129,
+          "train_rows": 22,
+          "train_failures": 3,
+          "train_failure_rate": 0.13636363636363635,
+          "test_rows": 107,
+          "test_failures": 38,
+          "test_failure_rate": 0.35514018691588783,
+          "repo_train_share_pct": 17.05426356589147,
+          "test_set_share_pct": 20.616570327552985,
+          "min_timestamp": "2026-09-01 12:10:22",
+          "max_timestamp": "2026-09-18 11:02:23"
+        },
+        "pallets/flask": {
+          "total_rows": 361,
+          "train_rows": 361,
+          "train_failures": 144,
+          "train_failure_rate": 0.3988919667590028,
+          "test_rows": 0,
+          "test_failures": 0,
+          "test_failure_rate": 0.0,
+          "repo_train_share_pct": 100.0,
+          "test_set_share_pct": 0.0,
+          "min_timestamp": "2025-07-31 18:46:58",
+          "max_timestamp": "2026-09-08 16:28:29"
+        },
+        "psf/requests": {
+          "total_rows": 514,
+          "train_rows": 514,
+          "train_failures": 8,
+          "train_failure_rate": 0.01556420233463035,
+          "test_rows": 0,
+          "test_failures": 0,
+          "test_failure_rate": 0.0,
+          "repo_train_share_pct": 100.0,
+          "test_set_share_pct": 0.0,
+          "min_timestamp": "2025-08-05 09:01:20",
+          "max_timestamp": "2026-09-07 16:54:44"
+        },
+        "scikit-learn/scikit-learn": {
+          "total_rows": 286,
+          "train_rows": 49,
+          "train_failures": 4,
+          "train_failure_rate": 0.08163265306122448,
+          "test_rows": 237,
+          "test_failures": 21,
+          "test_failure_rate": 0.08860759493670886,
+          "repo_train_share_pct": 17.132867132867133,
+          "test_set_share_pct": 45.664739884393065,
+          "min_timestamp": "2026-08-28 14:36:37",
+          "max_timestamp": "2026-09-18 00:54:57"
+        },
+        "tiangolo/fastapi": {
+          "total_rows": 396,
+          "train_rows": 377,
+          "train_failures": 75,
+          "train_failure_rate": 0.1989389920424403,
+          "test_rows": 19,
+          "test_failures": 4,
+          "test_failure_rate": 0.21052631578947367,
+          "repo_train_share_pct": 95.2020202020202,
+          "test_set_share_pct": 3.6608863198458574,
+          "min_timestamp": "2026-08-04 16:21:39",
+          "max_timestamp": "2026-09-14 19:02:59"
+        },
+        "vuejs/core": {
+          "total_rows": 328,
+          "train_rows": 221,
+          "train_failures": 6,
+          "train_failure_rate": 0.027149321266968326,
+          "test_rows": 107,
+          "test_failures": 7,
+          "test_failure_rate": 0.06542056074766354,
+          "repo_train_share_pct": 67.3780487804878,
+          "test_set_share_pct": 20.616570327552985,
+          "min_timestamp": "2026-05-08 09:28:58",
+          "max_timestamp": "2026-09-17 07:30:40"
+        }
+      },
+      "flags": [
+        "FLAG: Repo 'huggingface/transformers' has <20% (17.1%) of its rows in train set in global split.",
+        "FLAG: Repo 'pallets/flask' has 0 test rows in global split.",
+        "FLAG: Repo 'psf/requests' has 0 test rows in global split.",
+        "FLAG: Repo 'scikit-learn/scikit-learn' has <20% (17.1%) of its rows in train set in global split."
+      ]
+    },
+    "xgboost": {
+      "metrics": {
+        "pr_auc": 0.6245686343032439,
+        "roc_auc": 0.8791790220361648,
+        "pr_auc_ci_95": [
+          0.5185740255704483,
+          0.7310403897563371
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.75,
+            "recall": 0.5
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.4807692307692308,
+            "recall": 0.6410256410256411
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.391025641025641,
+            "recall": 0.782051282051282
+          }
+        },
+        "threshold": 0.73,
+        "precision": 0.7272727272727273,
+        "recall": 0.5128205128205128,
+        "f1": 0.6015037593984962,
+        "confusion_matrix": [
+          [
+            426,
+            15
+          ],
+          [
+            38,
+            40
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.7961904761904761
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.7471965896093149
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.5384360564804468
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.5786953975729485
+          }
+        }
+      }
+    },
+    "logistic_regression": {
+      "metrics": {
+        "pr_auc": 0.4932263410804166,
+        "roc_auc": 0.8052793767079481,
+        "pr_auc_ci_95": [
+          0.3895275633128391,
+          0.598850608226637
+        ],
+        "bootstrap_skipped": 0,
+        "top_k_percent": {
+          "top_10%": {
+            "k": 52,
+            "precision": 0.5576923076923077,
+            "recall": 0.3717948717948718
+          },
+          "top_20%": {
+            "k": 104,
+            "precision": 0.4230769230769231,
+            "recall": 0.5641025641025641
+          },
+          "top_30%": {
+            "k": 156,
+            "precision": 0.358974358974359,
+            "recall": 0.717948717948718
+          }
+        },
+        "threshold": 0.62,
+        "precision": 0.41414141414141414,
+        "recall": 0.5256410256410257,
+        "f1": 0.4632768361581921,
+        "confusion_matrix": [
+          [
+            383,
+            58
+          ],
+          [
+            37,
+            41
+          ]
+        ],
+        "per_repo_pr_auc": {
+          "django/django": {
+            "test_failures": 3,
+            "pr_auc": "insufficient failures"
+          },
+          "expressjs/express": {
+            "test_failures": 5,
+            "pr_auc": 0.9428571428571428
+          },
+          "huggingface/transformers": {
+            "test_failures": 38,
+            "pr_auc": 0.5550582857312296
+          },
+          "scikit-learn/scikit-learn": {
+            "test_failures": 21,
+            "pr_auc": 0.44259296009289606
+          },
+          "tiangolo/fastapi": {
+            "test_failures": 4,
+            "pr_auc": "insufficient failures"
+          },
+          "vuejs/core": {
+            "test_failures": 7,
+            "pr_auc": 0.3695237817457231
+          }
+        }
+      }
+    },
+    "paired_bootstrap_vs_lr": {
+      "mean_difference": 0.1313044025511906,
+      "ci_lower": 0.07061198928651033,
+      "ci_upper": 0.20423867096689202,
+      "win_fraction": 1.0,
+      "skipped": 0
+    }
+  },
+  "threshold_sensitivity_check": {
+    "description": "Read-only evaluation of F1-optimal (0.73) vs F2-optimal (0.37) operating thresholds on primary test set.",
+    "threshold_0_73_f1": {
+      "threshold": 0.73,
+      "precision": 0.693069306930693,
+      "recall": 0.5343511450381679,
+      "f1": 0.603448275862069,
+      "f2": 0.56,
+      "confusion_matrix": {
+        "tp": 70,
+        "fp": 31,
+        "tn": 357,
+        "fn": 61
+      },
+      "raw_matrix": [
+        [
+          357,
+          31
+        ],
+        [
+          61,
+          70
+        ]
+      ]
+    },
+    "threshold_0_37_f2": {
+      "threshold": 0.37,
+      "precision": 0.425,
+      "recall": 0.9083969465648855,
+      "f1": 0.5790754257907542,
+      "f2": 0.7400497512437811,
+      "confusion_matrix": {
+        "tp": 119,
+        "fp": 161,
+        "tn": 227,
+        "fn": 12
+      },
+      "raw_matrix": [
+        [
+          227,
+          161
+        ],
+        [
+          12,
+          119
+        ]
+      ]
+    },
+    "train_oof_vs_test_delta_at_0_37": {
+      "train_oof_precision": 0.352,
+      "train_oof_recall": 0.769,
+      "test_precision": 0.425,
+      "test_recall": 0.9083969465648855,
+      "precision_delta": 0.07300000000000001,
+      "recall_delta": 0.13939694656488544
+    }
+  }
+}
