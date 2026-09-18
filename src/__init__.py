@@ -1,0 +1,1 @@
+"""CI Failure Predictor package."""
